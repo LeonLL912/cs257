@@ -1,6 +1,11 @@
 DROP TABLE IF EXISTS earthquakes;
 CREATE TABLE earthquakes (
+  quaketime time with time zone,
   latitude real,
   longitude real,
-  depth real
+  quakedepth real,
+  mag real,
+  id text,
+  place text,
+  quaketype text
 );
