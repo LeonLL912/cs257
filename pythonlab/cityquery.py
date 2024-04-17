@@ -10,7 +10,7 @@ def test_query_one_1():
         port=5432,   
         database="liangl",
         user="liangl",
-        password=" ruby383expo")
+        password="ruby383expo")
 
     cur = conn.cursor()
 
@@ -43,7 +43,7 @@ def test_query_one_2():
         port=5432,   
         database="liangl",
         user="liangl",
-        password=" ruby383expo")
+        password="ruby383expo")
 
     cur = conn.cursor()
 
@@ -78,7 +78,7 @@ def test_query_one_3():
         port=5432,   
         database="liangl",
         user="liangl",
-        password=" ruby383expo")
+        password="ruby383expo")
 
     cur = conn.cursor()
 
@@ -114,7 +114,7 @@ def test_query_all_4():
         port=5432,   
         database="liangl",
         user="liangl",
-        password=" ruby383expo")
+        password="ruby383expo")
 
     cur = conn.cursor()
 
