@@ -25,18 +25,8 @@ def test_query_one_1():
         print(row)
     else:
         print("There is no data about Northfield in this data set.")
-    # Note: We could access individual items in the row
-    # That is, row[0] would be the name column in the previous example
-    #   ... and row[1] would be the abb column
-
-    #IMPORTANT: This function doesn't actually change the database
-    #If we are trying to change the database ...
-    # ... for example, creating a table
-    #Then we need the following command to finalize our changes
-
-    conn.commit()
     
-    return row
+    return None
 
 
 
@@ -69,18 +59,8 @@ def test_query_one_2():
         print(row)
     else:
         print("Error.")
-    # Note: We could access individual items in the row
-    # That is, row[0] would be the name column in the previous example
-    #   ... and row[1] would be the abb column
-
-    #IMPORTANT: This function doesn't actually change the database
-    #If we are trying to change the database ...
-    # ... for example, creating a table
-    #Then we need the following command to finalize our changes
-
-    conn.commit()
     
-    return row
+    return None
 
 
 
