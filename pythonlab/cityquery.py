@@ -140,3 +140,12 @@ def test_query_all_4():
 
     
     return None
+
+
+
+
+# Calling functions
+test_query_one_1()
+test_query_one_2()
+test_query_one_3()
+test_query_all_4()
