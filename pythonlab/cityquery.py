@@ -82,7 +82,7 @@ def test_query_one_3():
 
     cur = conn.cursor()
 
-    sql_least_MN_city = """SELECT city FROM uspop1k WHERE city = 'Minnesota' ORDER BY pop ASC
+    sql_least_MN_city = """SELECT USstate FROM uspop1k WHERE USstate = 'Minnesota' ORDER BY pop ASC
              LIMIT 1;"""
     
     cur.execute( sql_least_MN_city )
