@@ -40,4 +40,4 @@ def create_tables():
         print( "Problem with Connection" )
     return None
 
-
+create_tables()
