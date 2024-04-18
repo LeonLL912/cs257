@@ -22,7 +22,7 @@ def test_query_one_1():
     row = cur.fetchone()
 
     if (row != None):
-        print(row)
+        print("Yayyy, we have", row[0])
         print("")
     else:
         print("There is no data about Northfield in this data set.")
@@ -58,7 +58,7 @@ def test_query_one_2():
     row = cur.fetchone()
 
     if (row != None):
-        print("The city with largest population in the United States is: ", row[0])
+        print("The city with largest population in the United States is:", row[0])
         print("")
     else:
         print("Error.")
@@ -127,23 +127,57 @@ def test_query_all_4():
     sql_directions_1 = "SELECT city FROM uspop1k ORDER BY lat DESC LIMIT 1;"
     cur.execute( sql_directions_1 )
     row_1 = cur.fetchone()
-    print("The furthest North city in this dataset is: ", row_1[0])
+    print("The furthest North city in this dataset is:", row_1[0])
 
     sql_directions_2 = "SELECT city FROM uspop1k ORDER BY lat ASC LIMIT 1;"
     cur.execute( sql_directions_2 )
     row_2 = cur.fetchone()
-    print("The furthest South city in this dataset is: ", row_2[0])
+    print("The furthest South city in this dataset is:", row_2[0])
 
     sql_directions_3 = "SELECT city FROM uspop1k ORDER BY lon DESC LIMIT 1;"
     cur.execute( sql_directions_3 )
     row_3 = cur.fetchone()
-    print("The furthest East city in this dataset is: ", row_3[0])
+    print("The furthest East city in this dataset is:", row_3[0])
 
     sql_directions_4 = "SELECT city FROM uspop1k ORDER BY lon ASC LIMIT 1;"
     cur.execute( sql_directions_4 )
     row_4 = cur.fetchone()
-    print("The furthest West city in this dataset is: ", row_4[0])
+    print("The furthest West city in this dataset is:", row_4[0])
 
+    
+    return None
+
+
+
+
+
+def test_query_all_5():
+
+    # You will need to change the Password to use this code
+    
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,   
+        database="liangl",
+        user="liangl",
+        password="ruby383expo")
+
+    cur = conn.cursor()
+
+    statename = input("Please enter a state that you want to know about its total population:")
+    sql = "SELECT pop FROM states WHERE USstate = %s"
+    
+    cur.execute( sql, [statename]  )
+
+    # fetchall() returns a list containing all rows that matches your query
+    row_list = cur.fetchall()
+
+    # It is often useful to loop through all rows in a query result
+    totalpop = 0
+    for row in row_list:
+        totalpop += row[0]
+
+    print(totalpop)
     
     return None
 
@@ -155,3 +189,4 @@ test_query_one_1()
 test_query_one_2()
 test_query_one_3()
 test_query_all_4()
+test_query_all_5()
