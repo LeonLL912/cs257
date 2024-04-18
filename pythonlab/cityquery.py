@@ -177,7 +177,10 @@ def test_query_all_5():
     for row in row_list:
         totalpop += row[0]
 
-    print("Total population in", statename, "is:", totalpop)
+    if (totalpop == 0):
+        print(statename, "does not exist in this database.")
+    else:
+        print("Total population in", statename, "is:", totalpop)
     
     return None
 
