@@ -13,7 +13,7 @@ def create_tables():
     if conn is not None:
             cur = conn.cursor()
 
-            sql_USpop = """DROP TABLE IF EXISTS USpop
+            sql_USpop = """DROP TABLE IF EXISTS USpop;
                            CREATE TABLE USpop (
                              code text,
                              USstate text,
