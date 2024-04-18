@@ -8,7 +8,7 @@ def create_tables():
         port=5432,   
         database="liangl",
         user="liangl",
-        password=" ruby383expo")
+        password="ruby383expo")
 
     if conn is not None:
             cur = conn.cursor()
