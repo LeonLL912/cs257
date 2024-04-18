@@ -176,8 +176,9 @@ def test_query_all_5():
     totalpop = 0
     for row in row_list:
         totalpop += row[0]
+        print(row[0])
 
-    print(totalpop)
+    print("Total population in %s is:", totalpop)
     
     return None
 
