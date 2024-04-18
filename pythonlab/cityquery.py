@@ -165,7 +165,7 @@ def test_query_all_5():
     cur = conn.cursor()
 
     statename = input("Please enter a state that you want to know about its total population:")
-    sql = "SELECT pop FROM states WHERE USstate = %s"
+    sql = "SELECT pop FROM uspop1k WHERE USstate = %s"
     
     cur.execute( sql, [statename]  )
 
