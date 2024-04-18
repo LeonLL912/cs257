@@ -23,8 +23,10 @@ def test_query_one_1():
 
     if (row != None):
         print(row)
+        print("")
     else:
         print("There is no data about Northfield in this data set.")
+        print("")
     
     return None
 
@@ -57,8 +59,10 @@ def test_query_one_2():
 
     if (row != None):
         print("The city with largest population in the United States is: ", row)
+        print("")
     else:
         print("Error.")
+        print("")
     
     return None
 
@@ -92,8 +96,10 @@ def test_query_one_3():
 
     if (row != None):
         print("The city with least population in Minnesota is: ", row)
+        print("")
     else:
         print("Error.")
+        print("")
     
     return row
 
@@ -121,22 +127,22 @@ def test_query_all_4():
     sql_directions_1 = "SELECT city FROM uspop1k ORDER BY lat DESC LIMIT 1;"
     cur.execute( sql_directions_1 )
     row_1 = cur.fetchone()
-    print("The furthest North city: ", row_1)
+    print("The furthest North city in this dataset is: ", row_1[0])
 
     sql_directions_2 = "SELECT city FROM uspop1k ORDER BY lat ASC LIMIT 1;"
     cur.execute( sql_directions_2 )
     row_2 = cur.fetchone()
-    print("The furthest South city: " + str(row_2))
+    print("The furthest South city in this dataset is: ", row_2[0])
 
     sql_directions_3 = "SELECT city FROM uspop1k ORDER BY lon DESC LIMIT 1;"
     cur.execute( sql_directions_3 )
     row_3 = cur.fetchone()
-    print("The furthest East city: ", row_3)
+    print("The furthest East city in this dataset is: ", row_3[0])
 
     sql_directions_4 = "SELECT city FROM uspop1k ORDER BY lon ASC LIMIT 1;"
     cur.execute( sql_directions_4 )
     row_4 = cur.fetchone()
-    print("The furthest West city: ", row_4)
+    print("The furthest West city in this dataset is: ", row_4[0])
 
     
     return None
