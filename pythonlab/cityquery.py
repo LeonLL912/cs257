@@ -14,7 +14,7 @@ def test_query_one_1():
 
     cur = conn.cursor()
 
-    sql = "SELECT name, abb FROM city WHERE abb = 'Northfield' "
+    sql = "SELECT cities FROM uspop1k WHERE cities = 'Northfield' "
     
     cur.execute( sql )
 
@@ -47,7 +47,7 @@ def test_query_one_2():
 
     cur = conn.cursor()
 
-    sql_largest_pop = """ORDER BY population DESC
+    sql_largest_pop = """SELECT * FROM uspop1k ORDER BY population DESC
              LIMIT 1; """
     
     cur.execute( sql_largest_pop )
@@ -82,7 +82,7 @@ def test_query_one_3():
 
     cur = conn.cursor()
 
-    sql_least_MN_city = """SELECT name, abb FROM states WHERE abb = 'MN' ORDER BY pop ASC
+    sql_least_MN_city = """SELECT cities FROM uspop1k WHERE cities = 'MN' ORDER BY pop ASC
              LIMIT 1;"""
     
     cur.execute( sql_least_MN_city )
@@ -118,22 +118,22 @@ def test_query_all_4():
 
     cur = conn.cursor()
 
-    sql_directions_1 = "SELECT city_name FROM cities ORDER BY latitude DESC LIMIT 1;"
+    sql_directions_1 = "SELECT cities FROM uspop1k ORDER BY latitude DESC LIMIT 1;"
     cur.execute( sql_directions_1 )
     row_1 = cur.fetchone()
     print("Furthest North: "+row_1)
 
-    sql_directions_2 = "SELECT city_name FROM cities ORDER BY latitude ASC LIMIT 1;"
+    sql_directions_2 = "SELECT cities FROM uspop1k ORDER BY latitude ASC LIMIT 1;"
     cur.execute( sql_directions_2 )
     row_2 = cur.fetchone()
     print("Furthest South: "+row_2)
 
-    sql_directions_3 = "SELECT city_name FROM cities ORDER BY longitude DESC LIMIT 1;"
+    sql_directions_3 = "SELECT cities FROM uspop1k ORDER BY longitude DESC LIMIT 1;"
     cur.execute( sql_directions_3 )
     row_3 = cur.fetchone()
     print("Furthest East: "+row_3)
 
-    sql_directions_4 = "SELECT city_name FROM cities ORDER BY longitude ASC LIMIT 1;"
+    sql_directions_4 = "SELECT cities FROM uspop1k ORDER BY longitude ASC LIMIT 1;"
     cur.execute( sql_directions_4 )
     row_4 = cur.fetchone()
     print("Furthest West: "+row_4)
