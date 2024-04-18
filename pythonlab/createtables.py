@@ -31,10 +31,11 @@ def create_tables():
             
             cur.execute( sql_USpop )
             cur.execute( sql_1k )
+            print("Table created.")
             
 
             conn.commit()
-            print("Table created.")
+            
     else:
         print( "Problem with Connection" )
     return None
