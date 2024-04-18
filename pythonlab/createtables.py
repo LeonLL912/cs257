@@ -34,9 +34,9 @@ def create_tables():
             
 
             conn.commit()
+            print("Table created.")
     else:
         print( "Problem with Connection" )
-    print("The end of create_tables.")
     return None
 
 
