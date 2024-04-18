@@ -58,7 +58,7 @@ def test_query_one_2():
     row = cur.fetchone()
 
     if (row != None):
-        print("The city with largest population in the United States is: ", row)
+        print("The city with largest population in the United States is: ", row[0])
         print("")
     else:
         print("Error.")
@@ -95,7 +95,7 @@ def test_query_one_3():
     row = cur.fetchone()
 
     if (row != None):
-        print("The city with least population in Minnesota is: ", row)
+        print("The city with least population in Minnesota is:", row[0])
         print("")
     else:
         print("Error.")
