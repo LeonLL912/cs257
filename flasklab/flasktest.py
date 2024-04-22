@@ -49,7 +49,7 @@ def test_query_all_5(statename):
     if (totalpop == 0):
         return statename + "does not exist in this database."
     else:
-        return "Total population in" + statename + "is:" + str(totalpop)
+        return "Total population in" + statename + " is: " + str(totalpop)
 
 if __name__ == '__main__':
     my_port = 5119
