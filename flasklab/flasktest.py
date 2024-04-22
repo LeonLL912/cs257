@@ -34,7 +34,7 @@ def test_query_all_5(statename):
         password="ruby383expo")
 
     cur = conn.cursor()
-    sql = "SELECT pop FROM uspop1k WHERE USstate = " + statename
+    sql = "SELECT pop FROM uspop1k WHERE USstate = %s"
     
     cur.execute( sql, [statename]  )
 
