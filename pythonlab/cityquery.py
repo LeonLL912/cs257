@@ -173,7 +173,7 @@ def test_query_all_5():
     row = cur.fetchall()
 
     # It is often useful to loop through all rows in a query result
-    totalpop = row[0]
+    totalpop = int(row[0])
 
     if (totalpop == 0):
         print(statename, "does not exist in this database.")
