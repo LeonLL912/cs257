@@ -21,7 +21,7 @@ def my_color(word1):
 @app.route('/add/<num1>/<num2>')
 def my_add(num1, num2):
     result = int(num1) + int(num2)
-    the_string = num1 + "+" + num2 + "=" + result;
+    the_string = num1 + "+" + num2 + "=" + str(result);
     return the_string
 
 @app.route('/pop/<statename>')
@@ -49,7 +49,7 @@ def test_query_all_5(statename):
     if (totalpop == 0):
         return statename + "does not exist in this database."
     else:
-        return "Total population in" + statename + "is:" + totalpop
+        return "Total population in" + statename + "is:" + str(totalpop)
 
 if __name__ == '__main__':
     my_port = 5119
