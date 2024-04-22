@@ -170,10 +170,10 @@ def test_query_all_5():
     cur.execute( sql, [statename]  )
 
     # fetchall() returns a list containing all rows that matches your query
-    row = cur.fetchall()
+    row = cur.fetchone()
 
     # It is often useful to loop through all rows in a query result
-    totalpop = int(row[0])
+    totalpop = row[0]
 
     if (totalpop == 0):
         print(statename, "does not exist in this database.")
