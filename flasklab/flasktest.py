@@ -1,4 +1,5 @@
 import flask
+import psycopg2
 
 app = flask.Flask(__name__)
 
@@ -14,7 +15,41 @@ def my_display(word1, word2):
 
 @app.route('/color/<word1>')
 def my_color(word1):
-    return '<h1 style="background-color:Orange;"> + word1 + </h1> <p style="background-color:AntiqueWhite;">Lorem ipsum...</p>'
+    return '<h1 style="background-color:Orange;">' + word1 + '</h1> <p style="background-color:AntiqueWhite;">Lorem ipsum...</p>'
+
+
+@app.route('/add/<num1>/<num2>')
+def my_add(num1, num2):
+    result = num1 + num2
+    the_string = num1 + "+" + num2 + "=" + result;
+    return the_string
+
+@app.route('/pop/<statename>')
+def test_query_all_5(statename):   
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,   
+        database="liangl",
+        user="liangl",
+        password="ruby383expo")
+
+    cur = conn.cursor()
+    sql = "SELECT pop FROM uspop1k WHERE USstate = %s"
+    
+    cur.execute( sql, [statename]  )
+
+    # fetchall() returns a list containing all rows that matches your query
+    row_list = cur.fetchall()
+
+    # It is often useful to loop through all rows in a query result
+    totalpop = 0
+    for row in row_list:
+        totalpop += row[0]
+
+    if (totalpop == 0):
+        return statename + "does not exist in this database."
+    else:
+        return "Total population in" + statename + "is:" + totalpop
 
 if __name__ == '__main__':
     my_port = 5119
