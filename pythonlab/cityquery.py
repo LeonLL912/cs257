@@ -165,17 +165,15 @@ def test_query_all_5():
     cur = conn.cursor()
 
     statename = input("Please enter a state that you want to know about its total population:")
-    sql = "SELECT pop FROM uspop1k WHERE USstate = %s"
+    sql = "SELECT pop FROM uspop WHERE code = %s"
     
     cur.execute( sql, [statename]  )
 
     # fetchall() returns a list containing all rows that matches your query
-    row_list = cur.fetchall()
+    row = cur.fetchall()
 
     # It is often useful to loop through all rows in a query result
-    totalpop = 0
-    for row in row_list:
-        totalpop += row[0]
+    totalpop = row[0]
 
     if (totalpop == 0):
         print(statename, "does not exist in this database.")
