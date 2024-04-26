@@ -9,8 +9,8 @@ app = Flask(__name__)
 def welcome():
     return render_template("index.html")
 
-@app.route('/randdeath')
-def rand():
+@app.route('/randtrolling')
+def randt():
     return render_template("randtrolling.html")
 
 @app.route('/randborn')
