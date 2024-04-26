@@ -17,7 +17,7 @@ def create_tables():
                            CREATE TABLE nametime (
                              Firstname text,
                              Lastname text,
-                             year real
+                             year int
                            );"""
             
             cur.execute( sql_nt )
