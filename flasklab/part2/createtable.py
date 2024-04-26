@@ -13,8 +13,8 @@ def create_tables():
     if conn is not None:
             cur = conn.cursor()
 
-            sql_nt = """DROP TABLE IF EXISTS name&time;
-                           CREATE TABLE name&time (
+            sql_nt = """DROP TABLE IF EXISTS nametime;
+                           CREATE TABLE nametime (
                              Firstname text,
                              Lastname text,
                              year real
