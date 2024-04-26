@@ -46,7 +46,7 @@ def rand():
     lastnum = random.randint(0, 9)
     yearnum = random.randint(0,19)
     citynum = random.randint(0,50)
-    return render_template("randborn.html", firstname = firstrowlist[firstnum], lastname = lastrowlist[lastnum], year = yearrowlist[yearnum], city = cityrowlist[citynum])
+    return render_template("randborn.html", firstname = firstrowlist[firstnum][0], lastname = lastrowlist[lastnum][0], year = yearrowlist[yearnum][0], city = cityrowlist[citynum][0])
 
 
 if __name__ == '__main__':
