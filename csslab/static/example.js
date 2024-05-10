@@ -1,13 +1,14 @@
 var the_heading;
 var hColor;
 
-function myFunction(){
+function onLoadFunction(){
   the_heading = document.getElementById("hello");
   hColor = the_heading.style.color;
 }
+function onClick(){
+  the_heading.innerText="Goodbye World!";
+}
 
-the_heading.onclick = function(){
-  the_heading.innerText="Goodbye World!"};
 
 var counter = 1;
 function changeColor() {
