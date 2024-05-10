@@ -10,7 +10,7 @@ function onClick(){
 }
 
 
-var counter;
+var counter = 1;
 function changeColor() {
   if (counter % 2 == 1){
   	text_input_element = document.getElementById("user-color");
