@@ -17,12 +17,12 @@ function changeColor() {
   	new_color = text_input_element.value;
 		the_heading.style.color = new_color;
   	changeColorButton.innerText="OMG, this is even worse! Change The Color Back";
-    counter = 2;
+    counter++;
   }
   else{
-		the_heading.style.color = color;
+		the_heading.style.color = hColor;
   	changeColorButton.innerText="Change Color"; 
-    counter = 1;
+    counter++;
   }
   
 }
