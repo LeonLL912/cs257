@@ -9,8 +9,8 @@
   <title>Fun With Random Info</title>
 </head>
 
-<body onload="onLoadFunction()" onclick="onClick()">
-  <h1 class="my-class" id="hello">
+<body onload="onLoadFunction()">
+  <h1 class="my-class" id="hello" onclick="onClick()">
     Hello World!
   </h1>
 
@@ -38,7 +38,7 @@
 
   <p class="center-para">
     Color: <input id="user-color"> <br> <br>
-    <button class="big-button" onclick="changeColor()">
+    <button class="big-button" onclick="changeColor()" id="changeColorButton">
        I hate the color! Change one!
     </button>
     </p>
