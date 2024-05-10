@@ -1,10 +1,7 @@
-
 the_heading = document.getElementById("hello");
 const color = the_heading.style.color;
 
 the_heading.onclick = function(){ the_heading.innerText="Goodbye World!"};
-
-the_paragraph = document.getElementById("paragraph1");
 
 var counter = 1;
 function changeColor() {
