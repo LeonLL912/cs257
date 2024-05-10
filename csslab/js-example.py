@@ -51,5 +51,5 @@ def rand():
     return render_template("randborn.html", firstname = firstrowlist[firstnum][0], lastname = lastrowlist[lastnum][0], year = yearrowlist[yearnum][0], city = cityrowlist[citynum][0])
 
 if __name__ == '__main__':
-    my_port = 5119
+    my_port = 5219
     app.run(host='0.0.0.0', port = my_port) 
