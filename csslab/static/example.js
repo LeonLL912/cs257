@@ -1,10 +1,17 @@
-the_heading = document.getElementById("hello");
-const color = the_heading.style.color;
+var the_heading;
+var hColor;
 
-the_heading.onclick = function(){ the_heading.innerText="Goodbye World!"};
+function myFunction(){
+  the_heading = document.getElementById("hello");
+  hColor = the_heading.style.color;
+}
+
+the_heading.onclick = function(){
+  the_heading.innerText="Goodbye World!"};
 
 var counter = 1;
 function changeColor() {
+
   if (counter % 2 == 1){
   	text_input_element = document.getElementById("user-color");
   	new_color = text_input_element.value;
